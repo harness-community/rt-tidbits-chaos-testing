@@ -1,4 +1,4 @@
-# CE | Tidbits | Chaos Testing 
+# RT | Tidbits | Chaos Testing 
 > **Bite-sized how-to** | ~20 min setup
 
 ---
