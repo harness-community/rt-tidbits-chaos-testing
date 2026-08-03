@@ -125,7 +125,17 @@ You should see two pods in `Running` state.
    - Environment Type: **Pre-Production**
    - Setup: **Inline**
    - Click **Save**
-4. On the next screen, select **Expert** mode and click **Go!**
+4. After saving the environment, Harness prompts you to configure the Infrastructure:
+   - Name: `chaosinfra`
+   - Select your **Kubernetes cluster connector**
+   - Namespace: the namespace where the chaos agent will be deployed (e.g., `hce`)
+   - Click **Next** — Harness generates the chaos agent manifest
+   - Copy the manifest command and apply it to your cluster:
+     ```bash
+     kubectl apply -f <generated-manifest-url> -n hce
+     ```
+   - Wait for the infrastructure status to show **ACTIVE** in the Infrastructures list
+5. Once the infrastructure is ACTIVE, click **+ New Experiment** or navigate to the **Create Chaos Experiments** wizard and select **Expert** mode, then click **Go!**
 
 ---
 
